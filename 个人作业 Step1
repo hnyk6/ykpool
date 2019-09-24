@@ -25,22 +25,16 @@ import java.util.Date;
 
 
   
-/** 
- *  
- * @author cute 
- * 
- * 
- * 实现从文件中读入英文文章，统计单词个数,并按值从大到小输出 
- */  
   
-public class Second { 
-    static Scanner in =new Scanner(System.in);
-    static int qian;
+public class First { 
+    
     public static void main(String[] args) throws Exception {  
-          
+    	Scanner scanner = new Scanner(System.in);
+    	System.out.print("请输入文件所在路径：\n");
+    	String files = scanner.next();
         
         //读取文件内容
-        BufferedReader br = new BufferedReader(new FileReader("D:\\zhang.txt"));  
+        BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(files)));  
         List<String> lists = new ArrayList<String>();  //存储过滤后单词的列表  
         String readLine = null;
         while((readLine = br.readLine()) != null){  
@@ -99,32 +93,4 @@ public class Second {
     }  
     
     
-/*    public static int SortMap02(Map<String,Integer> oldmap){  
-        
-        ArrayList<Map.Entry<String,Integer>> list = new ArrayList<Map.Entry<String,Integer>>(oldmap.entrySet());  
-          
-        Collections.sort(list,new Comparator<Map.Entry<String,Integer>>(){  
-            @Override  
-            public int compare(Entry<String, Integer> o1, Entry<String, Integer> o2) {  
-                return o2.getValue() - o1.getValue();  //降序  
-            }  
-        });  
-          
-        for(int i = 0; i<qian; i++){  
-         //   System.out.println(list.get(i).getKey()+ "\t出现的次数为: " +list.get(i).getValue());  
-         //控制小数点
-        int a=list.get(i).getValue();
-        int b=list.size(); 
-        DecimalFormat df = new DecimalFormat("0.00");//格式化小数  
-        String num = df.format((float)a/b);//返回的是String类型 
-        
-        System.out.println(list.get(i).getKey()+ "\t\n出现的次数为: " +list.get(i).getValue()+"\t出现的频率为"+num);
-       
-        
-        
-        }
-        return 0;
- 
-    } */ 
-  
 } 
