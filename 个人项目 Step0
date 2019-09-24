@@ -11,7 +11,10 @@ public class Zero{
 
     }
  public static void main(String[] args) throws Exception {
-        BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream("D:\\zhang.txt")));
+	 	Scanner scanner = new Scanner(System.in);
+	 	System.out.print("请输入文件所在路径：\n");
+	 	String files = scanner.next();
+        BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(files)));
         int[] count  = new int[26];
     
         char[] c = new char[1];
@@ -84,3 +87,4 @@ public class Zero{
 
 
 }
+
